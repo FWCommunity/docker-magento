@@ -1,7 +1,7 @@
 version: "2"
 services:
   web:
-    image: meanbee/magento:5.6-apache
+    image: meanbee/magento:7.1-apache
     hostname: magento-dev.docker
     ports:
       - 80
@@ -16,7 +16,7 @@ services:
       - db
 
   cron:
-    image: meanbee/magento:5.6-cli
+    image: meanbee/magento:7.1-cli
     hostname: cron.magento-dev.docker
     working_dir: /var/www/html
     command: /run-cron.sh
@@ -28,7 +28,7 @@ services:
       - db
 
   cli:
-    image: meanbee/magento:5.6-cli
+    image: meanbee/magento:7.1-cli
     hostname: cli.magento-dev.docker
     working_dir: /var/www/html
     command: /bin/true
